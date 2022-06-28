@@ -3,7 +3,8 @@ VAR
     i:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1  DO
-        read (V1[i])
+        read (V1[i]);
+        i:=i+1;
     END_FOR
 END
 PROCEDURE read_vector2(n:INTEGER,VAR V2: array_of INTEGER)
@@ -11,7 +12,8 @@ VAR
     i:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1 DO
-        read (V2[i])
+        read (V2[i]);
+        i:=i+1;
     END_FOR
 END
 
@@ -20,7 +22,8 @@ VAR
     i:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1  DO
-        write (V1[i])
+        write (V1[i]);
+        i:=i+1;
     END_FOR
 END
 PROCEDURE write_vector2(n:INTEGER, V2: array_of INTEGER)
@@ -28,7 +31,9 @@ VAR
     i:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1 DO
-        write (V2[i])
+        write (V2[i]);
+        i:=i+1;
+
     END_FOR
 END
 
@@ -39,11 +44,12 @@ VAR
 BEGIN
     FOR i FROM 0 TO n-1  DO
         
-        IF (n MOD 2 =0) THEN
+        IF (n MOD 2=0) THEN
              ps:= V1[i]*V2[i]
         ELSE
             write (n)
         END_IF
+        i:=i+1;
     END_FOR
 END
 
@@ -57,5 +63,5 @@ BEGIN
     read_vector2(V2, n)
     write_vector1(V1, n)
     write_vector2(V2, n)
-    dot_product(ps, v1, v2)
+    dot_product(ps, v1, v2,n)
 END
